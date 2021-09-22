@@ -44,11 +44,14 @@ export default class Server{
             // Configurar Usuario
             sockets.configurarUsuario(cliente, this.io);
 
+            // Obtener usuarios activos
+            sockets.obtenerUsuarios(cliente, this.io);
+
             // Mensaje
             sockets.mensaje(cliente, this.io);
 
             // Desconectar
-            sockets.desconectar(cliente);
+            sockets.desconectar(cliente, this.io);
         })
     }
 
